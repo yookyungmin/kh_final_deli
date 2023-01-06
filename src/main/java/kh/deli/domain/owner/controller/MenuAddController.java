@@ -52,7 +52,7 @@ public class MenuAddController {
         System.out.println("메뉴옵션없이 도달");
         System.out.println(new Gson().toJson(menuOptionDTO));
 
-        System.out.println("이시발");
+
 
             ownerMenuService.insertMenuOption(menuOptionDTO);
             System.out.println("메뉴옵션추가");
