@@ -43,7 +43,9 @@ public class AccountController {
      */
     @ResponseBody
     @PostMapping("login")
-    public Boolean login(String email, String pw, String emailSave, HttpServletResponse response) throws Exception {
+    public Boolean login(String email, String pw, String emailSave, HttpServletResponse response)
+            throws Exception
+    {
         // 로그인 서비스 요청
         int result = mainAccountService.login(email, pw);
 
