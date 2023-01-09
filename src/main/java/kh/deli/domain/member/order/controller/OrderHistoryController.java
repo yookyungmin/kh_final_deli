@@ -98,8 +98,22 @@ public class OrderHistoryController {
         return "/member/order/ordersHistory";
     }
 
+
+
+
+    @ResponseBody
+    @RequestMapping("reviewChk")
+    public boolean isExistReview(int order_seq){
+       boolean result=  orderHistoryService.isExistReivew(order_seq);
+
+        System.out.println(result+"리뷰체킹");
+        return result;
+    }
+
+
+
     @RequestMapping("/{orderSeq}")
-        public String reOrders(@PathVariable("orderSeq")Integer order_seq) throws Exception{
+    public String reOrders(@PathVariable("orderSeq")Integer order_seq) throws Exception{
         session.removeAttribute("basket");
         //가게 시퀸스 다르게 담아오면 오류라서 세션 삭제 후 진행
 
@@ -120,17 +134,5 @@ public class OrderHistoryController {
         session.setAttribute("basket", basket);
         return "redirect:/basket";
 
-
-        }
-
-
-
-    @ResponseBody
-    @RequestMapping("reviewChk")
-    public boolean isExistReview(int order_seq){
-       boolean result=  orderHistoryService.isExistReivew(order_seq);
-
-        System.out.println(result+"리뷰체킹");
-        return result;
     }
 }
