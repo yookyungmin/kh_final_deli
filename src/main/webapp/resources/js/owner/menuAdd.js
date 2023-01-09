@@ -93,18 +93,6 @@ function menuOptionCheck2(){
 
 
 
-// var section1s = document.getElementsByClassName("section1");
-// var section2s = document.getElementsByClassName("section2");
-//
-// for( var i = 0; i < section1s.length; i++ ){
-//     var section1 = section1s.item(i);
-//     section1.style.border = "1px solid #0000ff";
-// }
-//
-// for( var i = 0; i < section2s.length; i++ ){
-//     var section2 = section2s.item(i);
-//     section2.style.border = "1px solid #ff0000"
-// }
 
 //옵션추가
 $(document).on("click", ".btn_option_add", function () {
@@ -251,13 +239,11 @@ $(document).on("click",".btn_add", function () {
             }
         }
         
-        console.log("서브밋왜안되냐")
+
         //메뉴추가
         $("#frm").attr("action","/owner/menu/add/menuAdd?menu_seq="+menuSeq);
         //console.log(data)
          $("#frm").submit();
-
-        console.log("서브밋왜안되냐2222")
 
     })
 
