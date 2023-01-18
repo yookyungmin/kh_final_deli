@@ -19,5 +19,6 @@
 <img src="https://user-images.githubusercontent.com/86849233/213210437-92d3593d-3414-4ce2-ad8f-eef30330dd3d.png" width="600"/>
 <br>
 
-### 주요기능 <br>
-* 카카오 로그인
+### 핵심기능 <br>
+* 장바구니
+* 결제
