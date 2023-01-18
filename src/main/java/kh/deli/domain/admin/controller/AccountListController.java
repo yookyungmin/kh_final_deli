@@ -4,6 +4,7 @@ package kh.deli.domain.admin.controller;
 import ch.qos.logback.core.net.SyslogOutputStream;
 import kh.deli.domain.admin.dto.AdminAccountDTO;
 import kh.deli.domain.admin.service.AdminAccountService;
+import kh.deli.domain.main.service.MainAccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import java.util.List;
 public class AccountListController {
 
     private final AdminAccountService adminAccountService;
+    private final MainAccountService mainAccountService;
 
     @RequestMapping("")
     public String toAdminAccount(Model model){
@@ -31,7 +33,7 @@ public class AccountListController {
     public String acoounDelete(int acc_seq) throws  Exception{
        // System.out.println(acc_seq);
 
-        adminAccountService.deleteAccount(acc_seq);
+        //mainAccountService.withdrawal(); 삭제
         return"redirect:";
     }
 }

@@ -162,10 +162,6 @@ $(document).on("click", ".btn_opnameadd", function () {
 
 
 $(document).on("click",".btn_add", function () {
-
-
-    // let selb = $("select[name=option_required] option:selected").val();
-    // let sela = document.querySelectorAll(".required:selected")
     let opGroup = document.querySelectorAll(".op_group");
     console.log(opGroup)
     console.log("그룹길이"+opGroup.length)
@@ -175,19 +171,14 @@ $(document).on("click",".btn_add", function () {
     let multiPle = document.querySelectorAll(".op_multi");
     //중첩for문돌리예정
     //let opgroup = $(".opgroup").val();
-
-
     let menuSeq;
     console.log(menuSubmitCheck())
-
-
     if(opGroup.length!=0) {
 
         if (!menuSubmitCheck() || !menuOptionCheck2()) {
             Swal.fire({title: "등록 실패", icon: "error", text: "옵션등록에 실패하였습니다. 관리자에게 문의해주세요"});
             return false;
         }
-
     }else {
         if (!menuSubmitCheck()) {
             Swal.fire({title: "등록 실패", icon: "error", text: "메뉴등록에 실패하였습니다. 관리자에게 문의해주세요"});
@@ -195,11 +186,6 @@ $(document).on("click",".btn_add", function () {
         }
 
     }
-
-
-
-
-
 
     //menu seq를 메뉴테이블, 메뉴 옵션테이블에 각각 추가하기 위한 조치
     $.ajax({
@@ -215,10 +201,8 @@ $(document).on("click",".btn_add", function () {
                 let opPrice = $(document.querySelectorAll(".group")[i]).find(".op_price")
                 //기본 opname 길이 2
                 for (let j = 0; j < opName.length; j++) {
-
                     let opNameVal = opName[j].value;
                     let opPriceVal = opPrice[j].value;
-
                     let data = {
                         "menu_seq":menuSeq,
                         "option_required": sela[i].value,
@@ -227,7 +211,6 @@ $(document).on("click",".btn_add", function () {
                         "option_name": opNameVal,
                         "option_price": Number(opPriceVal)
                     }
-
                     console.log(data)
                     $.ajax({
                         url: "/owner/menu/add/menuAddAjax",
@@ -238,17 +221,12 @@ $(document).on("click",".btn_add", function () {
                 }
             }
         }
-        
-
         //메뉴추가
         $("#frm").attr("action","/owner/menu/add/menuAdd?menu_seq="+menuSeq);
         //console.log(data)
          $("#frm").submit();
-
     })
-
     // console.log(menu_seq)
-
 })
 
 ///이미지 미리보기

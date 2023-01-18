@@ -185,7 +185,7 @@ $("#add").on("click", function () {
     console.log(bs_day);
     console.log($("#bsns_data").val());
     let bsnsData = JSON.parse($("#bsns_data").val());
-    console.log(bsns_data); //이렇게 parsing해서 쓰면 돼요.
+    console.log(bsns_data); //parsing 할떈  이렇게  parsing해서 쓰면 된다
 
 
     $("#frm").attr("action", "/owner/store/add/storeAdd")

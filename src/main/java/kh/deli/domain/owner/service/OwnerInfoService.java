@@ -5,6 +5,7 @@ import kh.deli.global.entity.OwnerDTO;
 import kh.deli.global.util.Encryptor;
 import kh.deli.global.util.FileUtil;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -23,6 +23,7 @@ public class MenuAddController {
     private final HttpSession session;
     private  final OwnerMenuService ownerMenuService;
 
+
     @RequestMapping("")
 
     public String toMenuAdd(Model model, Integer store_seq){

@@ -123,16 +123,16 @@
             <div class="rowBox" style="height:100px; margin-top: 25px;">
                 <div class="title">식당소개</div>
                 <div class="contents" style="height:100px;">
-<%--                    <input type="text" name="store_intro" placeholder="식당소개란" id="store_intro"--%>
-<%--                                                                    class="input_intro">--%>
+                    <%--                    <input type="text" name="store_intro" placeholder="식당소개란" id="store_intro"--%>
+                    <%--                                                                    class="input_intro">--%>
                     <textarea id="store_intro" name="store_intro" placeholder="식당 소개란"  class="input_intro form-control"  maxlength="500"></textarea>
                 </div>
             </div>
             <div class="rowBox" style="height:100px; margin-top: 25px;" >
                 <div class="title" >주요 원산지</div>
                 <div class="contents" style="height:100px;" >
-<%--                    <input type="text" name="store_origin" placeholder="주요 원산지" id="store_origin"--%>
-<%--                                                                      class="input_origin">--%>
+                    <%--                    <input type="text" name="store_origin" placeholder="주요 원산지" id="store_origin"--%>
+                    <%--                                                                      class="input_origin">--%>
                     <textarea id="store_origin" name="store_origin" placeholder="주요 원산지"  class="input_origin form-control"></textarea></div>
             </div>
 
@@ -281,7 +281,7 @@
             <div class="rowBox">
                 <div class="title">주문 최소 금액</div>
                 <div class="contents input-group" style="width: 200px;" > <input style="height: 40px " type="text" name="store_min_price" placeholder="주문 최소 금액" id="store_min_price"
-                    class="input form-control" oninput=validNum()  maxlength="10"><div style='position: relative; top: 5px; left: -25px;'>원</div></div>
+                                                                                 class="input form-control" oninput=validNum()  maxlength="10"><div style='position: relative; top: 5px; left: -25px;'>원</div></div>
             </div>
 
 
@@ -289,7 +289,7 @@
             <div class="rowBox">
                 <div class="title">배달팁</div>
                 <div class="contents input-group" style="width: 200px;"><input style="width:20px !important; height: 40px;" type="text" name="store_deli_tip" placeholder="배달팁" id="store_deli_tip" class="input form-control"
-                                             oninput=validNum() maxlength="10"><div style='position: relative; top: 5px; left: -25px;' >원</div></div>
+                                                                               oninput=validNum() maxlength="10"><div style='position: relative; top: 5px; left: -25px;' >원</div></div>
             </div>
 
 

@@ -8,6 +8,7 @@ import kh.deli.global.entity.MenuDTO;
 import kh.deli.global.entity.MenuOptionDTO;
 import kh.deli.global.entity.StoreDTO;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.batch.core.configuration.xml.ExceptionElementParser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,15 @@ import java.util.UUID;
 
 @Service
 @AllArgsConstructor
+@NoArgsConstructor
 public class OwnerMenuService {
 
-    private final HttpSession session;
+    private  HttpSession session;
 
-    private final OwnerMenuMapper ownerMenuMapper;
+    private  OwnerMenuMapper ownerMenuMapper;
 
 
-   @Transactional
+
     public void insertMenu(MenuDTO menuDTO,  MultipartFile file, int menu_seq) throws IOException {
 
        //메뉴seq 생성
@@ -57,8 +59,8 @@ public class OwnerMenuService {
 
     }
 
-    @Transactional
-    ///메뉴 insert문
+
+    ///메뉴옵션 insert문
     public void insertMenuOption(MenuOptionDTO menuOptionDTO) throws  Exception{
 
         System.out.println(menuOptionDTO.getOption_group());
