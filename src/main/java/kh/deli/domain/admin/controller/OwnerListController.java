@@ -33,8 +33,6 @@ public class OwnerListController {
     public String toAdminOwner(Model model){
         List<AdminOwnerDTO> owner_list = adminOwnerService.selectOwnerList();
 
-        // System.out.println(owner_list.get(3).getStore_count());
-       // System.out.println(owner_list.get(2).getAcc_seq());
         model.addAttribute("owner_list", owner_list);
         return "admin/adminOwnerList";
     }
@@ -42,7 +40,9 @@ public class OwnerListController {
     @RequestMapping("/deleteOwner")
     public String deleteOwner(int owner_seq, int acc_seq) throws Exception {
 
+
         //mainAccountService.withdrawal(acc_seq); //사업자 삭제 통합 메서드
+
 
         return "redirect:";
     }

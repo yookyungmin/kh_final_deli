@@ -1,4 +1,3 @@
-
 //input 칸 안에 숫자값 외에 값 받지 않기
 function validNum() {
     event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -27,14 +26,14 @@ function menuSubmitCheck() {
     }
 
     else if ($("#menu_name").val() == "") {
-S
+
         $("#menu_name").focus();
     }
     else if ($("#menu_price").val() == "") {
 
         $("#menu_price").focus();
     }else if ($("#menu_price").val() <=100) {
-            alert("메뉴100원이상입력")
+        alert("메뉴100원이상입력")
         $("#menu_price").focus();
 
     }
@@ -93,6 +92,18 @@ function menuOptionCheck2(){
 
 
 
+// var section1s = document.getElementsByClassName("section1");
+// var section2s = document.getElementsByClassName("section2");
+//
+// for( var i = 0; i < section1s.length; i++ ){
+//     var section1 = section1s.item(i);
+//     section1.style.border = "1px solid #0000ff";
+// }
+//
+// for( var i = 0; i < section2s.length; i++ ){
+//     var section2 = section2s.item(i);
+//     section2.style.border = "1px solid #ff0000"
+// }
 
 //옵션추가
 $(document).on("click", ".btn_option_add", function () {
@@ -125,6 +136,10 @@ $(document).on("click", ".btn_option_add", function () {
 
 $(document).on("click", ".btn_opnameadd", function () {
 
+
+
+
+
     let opAddBox = $("<div class='optionName_div_add input-group' style='margin-top: 5px'>");
 
     let delBtn = $("<button type='button'>")
@@ -139,7 +154,7 @@ $(document).on("click", ".btn_opnameadd", function () {
     });
     opAddBox.append(delBtn)
 
-        opAddBox.append("<input type='text' placeholder='옵션명을 입력하세요' name='option_name' class='op_name form-control' style=\"width: 300px;\"maxlength=\"60\"> <input type='text' placeholder='옵션가격' name='option_price' class='op_price form-control' style=\"width: 200px;\" oninput=validNum() maxlength=\"15\"><div style='position: relative; top: 5px; left: -25px;'>원</div></div>")
+    opAddBox.append("<input type='text' placeholder='옵션명을 입력하세요' name='option_name' class='op_name form-control' style=\"width: 300px;\"maxlength=\"60\"> <input type='text' placeholder='옵션가격' name='option_price' class='op_price form-control' style=\"width: 200px;\" oninput=validNum() maxlength=\"15\"><div style='position: relative; top: 5px; left: -25px;'>원</div></div>")
     //opAddBox.append("<input type='text' placeholder='옵션명을 입력하세요' name='option_name' class='op_name'> <input  style='width: 150px;'type='text' placeholder='옵션가격' name='option_price' class='op_price' oninput=validNum()>원</div> <br> ")
 
 
@@ -153,24 +168,31 @@ $(document).on("click", ".btn_opnameadd", function () {
 
 })
 
+
+
+
+
 $(document).on("click",".btn_add", function () {
+
+
+    // let selb = $("select[name=option_required] option:selected").val();
+    // let sela = document.querySelectorAll(".required:selected")
     let opGroup = document.querySelectorAll(".op_group");
-    console.log(opGroup)
-    console.log("그룹길이"+opGroup.length)
     let sela = document.querySelectorAll(".required");
-    console.log(sela)
-    console.log(sela.length)
     let multiPle = document.querySelectorAll(".op_multi");
     //중첩for문돌리예정
     //let opgroup = $(".opgroup").val();
+
+
     let menuSeq;
-    console.log(menuSubmitCheck())
+
     if(opGroup.length!=0) {
 
         if (!menuSubmitCheck() || !menuOptionCheck2()) {
             Swal.fire({title: "등록 실패", icon: "error", text: "옵션등록에 실패하였습니다. 관리자에게 문의해주세요"});
             return false;
         }
+
     }else {
         if (!menuSubmitCheck()) {
             Swal.fire({title: "등록 실패", icon: "error", text: "메뉴등록에 실패하였습니다. 관리자에게 문의해주세요"});
@@ -178,6 +200,11 @@ $(document).on("click",".btn_add", function () {
         }
 
     }
+
+
+
+
+
 
     //menu seq를 메뉴테이블, 메뉴 옵션테이블에 각각 추가하기 위한 조치
     $.ajax({
@@ -193,8 +220,10 @@ $(document).on("click",".btn_add", function () {
                 let opPrice = $(document.querySelectorAll(".group")[i]).find(".op_price")
                 //기본 opname 길이 2
                 for (let j = 0; j < opName.length; j++) {
+
                     let opNameVal = opName[j].value;
                     let opPriceVal = opPrice[j].value;
+
                     let data = {
                         "menu_seq":menuSeq,
                         "option_required": sela[i].value,
@@ -203,22 +232,22 @@ $(document).on("click",".btn_add", function () {
                         "option_name": opNameVal,
                         "option_price": Number(opPriceVal)
                     }
-                    console.log(data)
+
                     $.ajax({
                         url: "/owner/menu/add/menuAddAjax",
                         type: "post",
                         data: data
                     })
-                    console.log("옵션ajax방문")
                 }
             }
         }
+
         //메뉴추가
         $("#frm").attr("action","/owner/menu/add/menuAdd?menu_seq="+menuSeq);
-        //console.log(data)
-         $("#frm").submit();
+        $("#frm").submit();
+
+
     })
-    // console.log(menu_seq)
 })
 
 ///이미지 미리보기
@@ -237,13 +266,11 @@ $("#menu_img").on("change", function () {
         $("#profile").attr("src", "/resources/img/store/no_storelogo.png");
         return;
     }
-    console.log($("#menu_img").val());
     let ext = $("#menu_img").val().split(".").pop().toLowerCase();
 
     let accept = ["png", "jpg", "jpeg", "gif"];
 
     let result = $.inArray(ext, accept); //첫번쨰 인자값이 두번쨰 인자 배열 안에 존재한다면 배열 인덱스 반환(0이상값 반환),  존재하지않으면 -1 반환
-    console.log(result);
 
 
     if (result == -1) {

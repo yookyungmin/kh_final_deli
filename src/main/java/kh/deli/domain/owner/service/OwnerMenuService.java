@@ -48,7 +48,6 @@ public class OwnerMenuService {
             //겹치지 않게 이름을 만들어야함
             String sysName= UUID.randomUUID()+"_"+oriName;
             file.transferTo(new File(filePath+"/"+sysName));
-            System.out.println("파일있을떄");
 
             menuDTO.setMenu_img(sysName);
         }
@@ -62,8 +61,6 @@ public class OwnerMenuService {
 
     ///메뉴옵션 insert문
     public void insertMenuOption(MenuOptionDTO menuOptionDTO) throws  Exception{
-
-        System.out.println(menuOptionDTO.getOption_group());
          //메뉴옵션에 메뉴seq
         ownerMenuMapper.insertMenuOption(menuOptionDTO);
     }
