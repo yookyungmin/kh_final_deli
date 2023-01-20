@@ -34,7 +34,7 @@ public class MenuAddController {
 
     @RequestMapping("/menuAdd")
     public String menuAdd(MenuDTO menuDTO, MultipartFile file, int menu_seq) throws IOException {
-        System.out.println("메뉴옵션없다");
+
         System.out.println(menu_seq+"메뉴 seqseq");
         System.out.println(menuDTO.getMenu_name());
         System.out.println(menuDTO.getMenu_price());
@@ -60,7 +60,7 @@ public class MenuAddController {
 
 
 
-        return "redirect:/";
+        return "";  //responsebody라서 스트링을 보내끼대문에 비워둔다
     }
 
     @RequestMapping("getMenuSeq")

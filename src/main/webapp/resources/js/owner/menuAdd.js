@@ -125,10 +125,6 @@ $(document).on("click", ".btn_option_add", function () {
 
 $(document).on("click", ".btn_opnameadd", function () {
 
-
-
-
-
     let opAddBox = $("<div class='optionName_div_add input-group' style='margin-top: 5px'>");
 
     let delBtn = $("<button type='button'>")
@@ -156,10 +152,6 @@ $(document).on("click", ".btn_opnameadd", function () {
     opAddBox.fadeIn(1000);
 
 })
-
-
-
-
 
 $(document).on("click",".btn_add", function () {
     let opGroup = document.querySelectorAll(".op_group");
