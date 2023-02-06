@@ -209,9 +209,9 @@ $("#menu_img").on("change", function () {
         $("#profile").attr("src", "/resources/img/store/no_storelogo.png");
         return;
     }
-    let ext = $("#menu_img").val().split(".").pop().toLowerCase();
+    let ext = $("#menu_img").val().split(".").pop().toLowerCase();//업로드한 파일명을 점을 기준으로 배열을 만들고 마지막 배열의 값을 꺼내고 소문자로 만들어줌
 
-    let accept = ["png", "jpg", "jpeg", "gif"];
+    let accept = ["png", "jpg", "jpeg", "gif"];// 업로드 가능한 파일 타입을 배열로 만듦
 
     let result = $.inArray(ext, accept); //첫번쨰 인자값이 두번쨰 인자 배열 안에 존재한다면 배열 인덱스 반환(0이상값 반환),  존재하지않으면 -1 반환
 

@@ -8,6 +8,7 @@ import kh.deli.global.entity.MenuOptionDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,7 +25,6 @@ public class MenuAddController {
     private final OwnerMenuService ownerMenuService;
 
     @RequestMapping("")
-
     public String toMenuAdd(Model model, Integer store_seq) {
 
         model.addAttribute("store_seq", store_seq);
@@ -41,7 +41,7 @@ public class MenuAddController {
     }
 
 
-    @RequestMapping("/menuAddAjax")
+    @RequestMapping("/menuOptionAdd")
     @ResponseBody
     public String menuAdd(MenuOptionDTO menuOptionDTO) throws Exception {
         ownerMenuService.insertMenuOption(menuOptionDTO);
@@ -49,7 +49,7 @@ public class MenuAddController {
         return "redirect:/";
     }
 
-    @RequestMapping("getMenuSeq")
+    @GetMapping("MenuSeq")
     @ResponseBody
     public int getMenuSeq() {
         int seq = ownerMenuService.getNextMenuSeq();
