@@ -86,13 +86,20 @@
 
 ### 담당기능 <br>
 * 식당 추가 페이지
+<img width="50%" src="https://user-images.githubusercontent.com/86849233/218297534-64713b1f-78dc-4fab-8210-a00096ce67ae.png">
 
+<img width="50%" src="https://user-images.githubusercontent.com/86849233/218297581-50e21c27-2eac-485a-bc5f-a427b264bf3b.png">
 
 * 메뉴 추가 페이지
-<img width="70%" src="https://user-images.githubusercontent.com/86849233/218296906-1ea84ce4-659f-4d72-90d3-2dfada4810c2.png">
+<img width="50%" src="https://user-images.githubusercontent.com/86849233/218296906-1ea84ce4-659f-4d72-90d3-2dfada4810c2.png">
 
 
 
 * 내 주문내역 페이지
+<img width="40%" src="https://user-images.githubusercontent.com/86849233/218298012-a9c9caf4-8cb6-4a72-a898-c236806312d2.JPG">
+
 * 일반 회원 관리 페이지
+<img width="50%" src="https://user-images.githubusercontent.com/86849233/218297957-b120ad87-50ed-4f88-bbd1-a81acce25698.png">
+
 * 사업자 회원 관리 페이지
+<img width="50%" src="https://user-images.githubusercontent.com/86849233/218297914-ff0652f7-37c3-41ae-bda3-f07139a89c2a.png">
