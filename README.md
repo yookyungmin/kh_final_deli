@@ -86,7 +86,13 @@
 
 ### 담당기능 <br>
 * 식당 추가 페이지
+
+
 * 메뉴 추가 페이지
+<img width="70%" src="https://user-images.githubusercontent.com/86849233/218296906-1ea84ce4-659f-4d72-90d3-2dfada4810c2.png">
+
+
+
 * 내 주문내역 페이지
 * 일반 회원 관리 페이지
 * 사업자 회원 관리 페이지
