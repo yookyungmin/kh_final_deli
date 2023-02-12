@@ -96,6 +96,7 @@
 
 
 * 내 주문내역 페이지
+<img width="40%" src="https://user-images.githubusercontent.com/86849233/218300546-68feeb4d-0cf0-43cc-b2bd-31371171232d.png">
 <img width="40%" src="https://user-images.githubusercontent.com/86849233/218298012-a9c9caf4-8cb6-4a72-a898-c236806312d2.JPG">
 
 * 일반 회원 관리 페이지
