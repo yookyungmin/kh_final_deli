@@ -47,11 +47,11 @@
                                 <span class="head_date">
                                     <fmt:formatDate value="${order_list.order_date}" pattern="yyyy.MM.dd HH:mm"/></span>
                                 <span class="head_status">${order_list.order_status}</span>
-                            <%--&lt;%&ndash;                <c:if test="${i.order_status=='order'}">미접수</c:if>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;                <c:if test="${i.order_status=='take'}">접수</c:if>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;                <c:if test="${i.order_status=='cooking'}">조리중</c:if>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;                <c:if test="${i.order_status=='delivering'}">배달중</c:if>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;                <c:if test="${i.order_status=='complete'}">배달완료</c:if>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;                <c:if test="${i.order_status=='order'}">미접수</c:if>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;                <c:if test="${i.order_status=='take'}">접수</c:if>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;                <c:if test="${i.order_status=='cooking'}">조리중</c:if>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;                <c:if test="${i.order_status=='delivering'}">배달중</c:if>&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;                <c:if test="${i.order_status=='complete'}">배달완료</c:if>&ndash;%&gt;--%>
                             </div>
                             <div class="box3">
                                 <c:if test="${order_list.store_logo==null}">
@@ -103,12 +103,12 @@
                                             </button>
                                         </a>
                                         <c:if test="${order_list.order_status=='배달완료'}">
-                                        <a href="/order/history/${order_list.order_seq}">
-                                            <button class="deli_btn" style="padding-left: 12px; padding-right: 12px;"
-                                                    type="button">재주문
-                                            </button>
-                                        </a>
-                                            </c:if>
+                                            <a href="/order/history/${order_list.order_seq}">
+                                                <button class="deli_btn" style="padding-left: 12px; padding-right: 12px;"
+                                                        type="button">재주문
+                                                </button>
+                                            </a>
+                                        </c:if>
                                             <%--                                        <button class="deli_btn reOrder" type="button" >재주문</button>--%>
                                             <%--                                            <div class="basket_menu_str" style="height:0px; overflow: hidden;">${menu_list_str[status.index]}</div>--%>
                                             <%--                                        <form action="/basket" method="post" id="to_basket">--%>

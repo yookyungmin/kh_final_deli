@@ -1,6 +1,7 @@
 package kh.deli.domain.member.order.controller;
 
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -36,10 +37,10 @@ import java.util.List;
 @RequestMapping("/order/history")
 public class OrderHistoryController {
 
-
+    @Autowired
     private HttpSession session;
-
-    private final OrderHistoryService orderHistoryService;
+    @Autowired
+    private OrderHistoryService orderHistoryService;
 
 
     private final OrderOrdersService orderOrdersService;
@@ -70,7 +71,6 @@ public class OrderHistoryController {
 
             BasketMenu MenuName = menuListName.get(0);
 
-            System.out.println(MenuName.getMenu().getMenu_name());
 
             int menuCount = menuListName.size();
 
@@ -89,7 +89,6 @@ public class OrderHistoryController {
         session.removeAttribute("basket");
         //가게 시퀸스 다르게 담아오면 오류라서 세션 삭제 후 진행
         OrdersDTO ordersDTO = orderOrdersService.findOrdersBySeq(order_seq);
-        //orderseq로 주문내역 가져오기
 
         int storeSeq = ordersDTO.getStore_seq();
         int orderPrice = ordersDTO.getOrder_price();
